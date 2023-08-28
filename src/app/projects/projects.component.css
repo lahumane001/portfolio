@@ -1,0 +1,18 @@
+
+.main-section{
+    background-color: #bcbce9;
+    border-radius: 20px;
+}
+.main-section img{
+    height: 200px;
+    object-fit: cover;
+}
+.main-section .card:hover{
+    transition: all .4s ease-in-out;
+    transform: translateY(-20px);
+}
+@media all and (max-width : 768px) {
+    .main-section .card{
+        margin-bottom: 25px;
+    }
+}

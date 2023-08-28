@@ -1,0 +1,17 @@
+.main-section{
+    background-color: #bcbce9;
+    border-radius: 20px;
+    
+}
+
+.text-center img{
+    border: 2px solid #000;
+    outline: 5px solid #122b039d;
+    border-radius: 70%;
+}
+.social-links a{
+    cursor: pointer;
+    color: #000;
+}
+
+    

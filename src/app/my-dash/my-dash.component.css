@@ -1,0 +1,11 @@
+.dash-section {
+    background-color: #bcbce9;
+    border-radius: 20px;
+}
+.signOut{
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    cursor: pointer;
+    color: #000;
+}

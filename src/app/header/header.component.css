@@ -1,0 +1,47 @@
+.sideBar{
+    background-color: #bcbce9;
+    border-radius: 20px;
+    height: 78vh;
+}
+.sideBar .active{
+    background-color: #050000;
+    padding: 5px 14px ;
+    color: aliceblue;
+    border-bottom: 4px solid #818a52;   
+    border-radius: 10px;
+    box-shadow: inset 0px 12px 5px -2px #818a52;
+}
+li, a{
+    list-style: none;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+.myIcons {
+    display: flex;
+    margin-top: 85px;
+    cursor: pointer;
+    columns: #000;
+}
+.myIcons a{
+    color: #000;
+}
+.primeSidebar{
+    display: none;
+    background-color: #bcbce9;
+   
+}
+@media all and (max-width : 768px){
+    .sideBar{
+        display: none;
+    }
+    .primeSidebar{
+        display: flex;
+        padding: 5px;
+    }
+    .primeSidebar .hambText{
+        position: absolute;
+    }
+    
+   
+} 

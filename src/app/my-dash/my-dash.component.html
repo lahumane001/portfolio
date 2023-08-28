@@ -1,0 +1,25 @@
+<!-- <p>my-dash works!</p> -->
+<div class="dash-section my-5">
+    <h2 class="text-center py-4 animate__animated animate__backInDown">Dashboard</h2>
+    <a class="signOut" (click)="logouticon()" title="Sign Out"><i class="fa fa-2x fa-sign-out" aria-hidden="true"></i></a>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr class=" text-center">
+                <th>Sr. No</th>
+                <th>Fullname</th>
+                <th>Email ID</th>
+                <th>Contact Number</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let msg of msgDetails; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{msg.fullName}}</td>
+                <td>{{msg.email}}</td>
+                <td>{{msg.contact}}</td>
+                <td>{{msg.msg}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

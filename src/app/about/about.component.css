@@ -1,0 +1,8 @@
+.about-section{
+    background-color: #bcbce9;
+    border-radius: 20px;
+}
+.myResume p, a{
+    font-size: 25px;
+    text-decoration: none;
+}

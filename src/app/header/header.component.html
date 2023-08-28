@@ -1,0 +1,32 @@
+<div class="my-5 py-4 sideBar ">
+    <ul >
+        <h3 class="text-left mb-4">𝕯𝖊𝖊𝖕ค𝓚</h3>
+        <li><a routerLinkActive="active" routerLink="home">Home</a></li>
+        <li><a routerLinkActive="active" routerLink="about">About</a></li>
+        <li><a routerLinkActive="active" routerLink="skills">Skills</a></li>
+        <li><a routerLinkActive="active" routerLink="projects">Projects</a></li>
+        <li><a routerLinkActive="active" routerLink="contact">Contact</a></li>
+    </ul>
+    <ul class="myIcons">
+        <li><a href="https://www.instagram.com/mr_dk_0358/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.facebook.com/deepak.khaire.50" target="_blank"><i class="fa fa-facebook-official mx-4" aria-hidden="true"></i></a></li>
+        <li><a routerLink="login"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+    </ul>
+</div>
+<div class="card flex justify-content-center mt-4 primeSidebar">
+
+    <p-sidebar [(visible)]="sidebarVisible">
+       
+        <div class="m-4">
+            <h3 class="text-left">𝕯𝖊𝖊𝖕ค𝓚</h3>
+        </div>
+        <ul >
+            <li><a (click)="sidebarVisible = false" routerLink="home">Home</a></li>
+            <li><a (click)="sidebarVisible = false" routerLink="about">About</a></li>
+            <li><a (click)="sidebarVisible = false" routerLink="skills">Skills</a></li>
+            <li><a (click)="sidebarVisible = false" routerLink="projects">Projects</a></li>
+            <li><a (click)="sidebarVisible = false" routerLink="contact">Contact</a></li>
+        </ul>
+    </p-sidebar><i class="fa fa-2x fa-bars text-right" aria-hidden="true" (click)="sidebarVisible = true"></i>
+    <h3 class="text-left hambText">𝕯𝖊𝖊𝖕คҠ</h3>
+</div>
