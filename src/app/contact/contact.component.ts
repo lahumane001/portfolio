@@ -9,22 +9,23 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit{
 
-  msgDetails : any;
-
-  constructor(private dataServe : DataHandlerService){}
-
+  formData : any;
+  constructor(private httpServ : DataHandlerService){}
+  
   ngOnInit(): void {
-    this.msgDetails = new FormGroup({
-      fullName : new FormControl('', Validators.required),
-      email : new FormControl('', Validators.required),
-      contact : new FormControl('', Validators.required),
-      msg : new FormControl('', Validators.required),
+    this.formData = new FormGroup({
+      Name : new FormControl('' , Validators.required),
+      email : new FormControl('' , [Validators.required , Validators.email]),
+      contact : new FormControl('' , [Validators.required , Validators.minLength(10), Validators.maxLength(10)]),
+      message : new FormControl('' , Validators.required)
     })
+    console.log(this.formData)
   }
-
-  onSubmit(){
-    console.log(this.msgDetails.value);
-    this.dataServe.postDetails(this.msgDetails.value).subscribe();
-    this.msgDetails.reset();
+  DataSubmit(){
+    console.log(this.formData.value)
+    this.httpServ.postData(this.formData.value).subscribe((res : any)=>{
+      console.log(res)
+    })
+    this.formData.reset()
   }
 }

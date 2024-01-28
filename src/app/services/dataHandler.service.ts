@@ -8,7 +8,7 @@ import { map } from "rxjs";
 
 export class DataHandlerService{
 
-    baseUrl = `https://signupin-86968-default-rtdb.asia-southeast1.firebasedatabase.app/portfolio.json`;
+    url = 'https://port-folio-63dc7-default-rtdb.asia-southeast1.firebasedatabase.app/userData.json'
     isLoggedIn:boolean = false;
 
     constructor(private http : HttpClient){}
@@ -29,12 +29,12 @@ export class DataHandlerService{
             }, 2000);
         })
     }
-    postDetails(obj :any){
-        return this.http.post(this.baseUrl, obj);
-    }
-
-    getDetails(){
-        return this.http.get(this.baseUrl).pipe(map((rawData : any)=>{
+    postData(res: any) {
+        return this.http.post(this.url, res)
+      }
+     
+      getData(){
+        return this.http.get(this.url).pipe(map((rawData : any)=>{
             let arr :any[] = [];
             for (let data in rawData){
                 arr.push({...rawData[data], id: data})

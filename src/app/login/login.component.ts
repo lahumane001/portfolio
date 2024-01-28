@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit{
 
   login(){
     console.log(this.loggedDetails.value.username);
-    if(this.loggedDetails.value.username === "Deepak98" && this.loggedDetails.value.password === "Deepak@98"){
+    if(this.loggedDetails.value.username === "Lahu123" && this.loggedDetails.value.password === "lahu123"){
       console.log('success');
       this.dataServe.loggedIn()
       this.router.navigate(['my-dashboard'])

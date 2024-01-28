@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
         if(res){
           return true;
         }else{
-          alert("Please Login Mr. DK.. :)")
+          alert("Please Login Mr. Lahu.. :)")
           this.router.navigate(['/home']);
           return false
         }

@@ -1,48 +1,53 @@
 <!-- <p>contact works!</p> -->
-<div class="contact-section my-5">
-    <h2 class="text-center py-4 animate__animated animate__backInDown">Contact Me</h2>
-    <div class="row">
-        <div class="col-md-3 offset-md-1 col-12 border border-secondary mt-3 p-4 animate__animated animate__bounceInDown">
-            <h3>Get In Touch</h3>
-            <p class="mt-4">Hello There...!</p>
+
+<div class="row contact-section my-5 py-5">
+    <div class="col-md-4 col-12 info">
+        <div>
+            <h3>Get in touch</h3>
             <p>if You Have Anything for Me then You Can Directly Contact Me Here...</p>
-            <p class="h4">
-                Address
+        </div>
+        <div class="mt-2">
+            <h3>Address</h3>
+            <p>
+                Pune,
+                Maharashtra - 411041
             </p>
-            <p>Aurangabad (SambhagiNagar), Maharashtra pin : 431001</p>
-            <div class="email mb-3">
-                <p class="h4">Email</p>
-            <a href="mailTo:dkhaire54@gmail.com" class="">dkhaire54@gmail.com</a>
+        </div>
+        <div class="mt-2">
+            <h3>Email Id:</h3>
+            <a href="mailto:lahumane001@gmail.com">lahumane001@gmail.com</a>
+        </div>
+        <div class="mt-2">
+            <h3>Phone No.</h3>
+            <a href="tel:9075484030">9075484030</a>
+        </div>
+    </div>
+    <div class="col-md-6 col-12 user-info">
+        <form [formGroup]="formData" (ngSubmit)="DataSubmit()">
+            <div class="form-group">
+                <label for="uName">UserName</label>
+                <input type="text" class="form-control" id="uName" placeholder="FullName" formControlName="Name">
+                <span *ngIf="formData.get('Name').invalid && formData.get('Name').touched" class="text-danger">please
+                    enter valid Name....</span>
             </div>
-            <p class="h4">Contact Number</p>
-            <a href="tel:9172888406">9172888406</a>
-        </div>
-        <div class="col-md-7 ml-md-4 col-12 border border-secondary mt-3 p-4 animate__animated animate__bounceInUp">
-            <form [formGroup]="msgDetails" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" formControlName="fullName" class="form-control">
-                    <span class="text-danger" *ngIf="!msgDetails.get('fullName').valid && msgDetails.get('fullName').touched">Full Name is Required...</span>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email ID</label>
-                    <input type="email" id="email" formControlName="email" class="form-control">
-                    <span class="text-danger" *ngIf="!msgDetails.get('email').valid && msgDetails.get('email').touched">Email ID is Required...</span>
-                </div>
-                <div class="form-group">
-                    <label for="contact">Contact Number</label>
-                    <input type="tel" id="contact" formControlName="contact" class="form-control">
-                    <span class="text-danger" *ngIf="!msgDetails.get('contact').valid && msgDetails.get('contact').touched">Contact Number is Required...</span>
-                </div>
-                <div class="form-group">
-                    <label for="msg">Message</label>
-                    <textarea type="text" rows="3" id="msg" formControlName="msg" class="form-control"></textarea>
-                    <span class="text-danger" *ngIf="!msgDetails.get('msg').valid && msgDetails.get('msg').touched">Please Say Whai is in Your Mind </span>
-                </div>
-                <div class="text-right">
-                    <button class="btn mt-2 btn-outline-dark" [disabled]="msgDetails.invalid">Send Message</button>
-                </div>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                    formControlName="email">
+                <span *ngIf="formData.get('email').invalid && formData.get('email').touched" class="text-danger">please
+                    enter valid mail....</span>
+            </div>
+            <div class="form-group">
+                <label for="">Contact No.</label>
+                <input type="text" class="form-control" id="" placeholder="1234567890" formControlName="contact">
+                <span *ngIf="formData.get('contact').invalid && formData.get('contact').touched"
+                    class="text-danger">please enter valid contact....</span>
+            </div>
+            <div class="form-group">
+                <label for="textArea">Message</label>
+                <textarea class="form-control" id="textArea" rows="3" formControlName="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="formData.invalid">Submit</button>
+        </form>
     </div>
 </div>

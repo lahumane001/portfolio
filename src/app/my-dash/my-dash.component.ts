@@ -14,7 +14,9 @@ export class MyDashComponent implements OnInit{
   constructor(private dataServe : DataHandlerService, private router : Router){}
 
   ngOnInit(): void {
-    this.dataServe.getDetails().subscribe((res: any)=>{
+    this.dataServe.getData().subscribe((res: any)=>{
+      console.log(res);
+      
       this.msgDetails = res;
       console.log(this.msgDetails);
     })
